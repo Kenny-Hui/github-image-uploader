@@ -36,11 +36,11 @@ By default you will be asked to login with a GitHub Personal Access Token (PAT).
 
 ### Example Setup
 Endpoints:
-- `https://www.example.com/auth/prod`
-- - Redirect to `https://www.ghimguploader.com/#/auth` (Query params passed, `www.ghimguploader.com` is where the website will be deployed to prod)
-- `https://www.example.com/auth/dev`
-- - Redirect to `https://localhost:5173/#/auth` (Query params passed, for local dev purpose)
-- `https://www.example.com/get_access_token`
+- GET `https://www.example.com/auth/prod`
+- - Redirect to `https://www.example.com/#/auth` (Passes `code` query, `www.example.com` is location deployed for production use)
+- GET `https://www.example.com/auth/dev`
+- - Redirect to `https://localhost:5173/#/auth` (Passes `code` query, `localhost:5173` is the location of dev server via npm dev)
+- GET `https://www.example.com/get_access_token`
 - - POST request to `https://github.com/login/oauth/access_token` and return the result in json
 - - Body type: `application/x-www-form-urlencoded`
 - - Body Content:
